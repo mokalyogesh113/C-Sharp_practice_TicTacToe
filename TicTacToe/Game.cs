@@ -18,6 +18,25 @@ namespace TicTacToe
 
         }
 
+        public void startPlaying()
+        {
+            displayBoard();
+            for (int i = 0; i < 9; i++)
+            {
+                int st = NextMove();
+                Console.Clear();
+                displayBoard();
+
+                if (st != -1)
+                {
+                    Console.WriteLine("Player {0} is the winner", st);
+                    return;
+                }
+
+            }
+        }
+
+
         public void displayBoard()
         {
             Console.WriteLine("      |     |");
